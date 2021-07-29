@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingNote", "AccountingNote\AccountingNote.csproj", "{052DB3A7-3451-47B7-8C50-6560F1DA1102}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingNote.DBSource", "AccountingNote.DBSource\AccountingNote.DBSource.csproj", "{6C2B0C73-1136-425C-A537-301F8F2E500A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{052DB3A7-3451-47B7-8C50-6560F1DA1102}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{052DB3A7-3451-47B7-8C50-6560F1DA1102}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{052DB3A7-3451-47B7-8C50-6560F1DA1102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C2B0C73-1136-425C-A537-301F8F2E500A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C2B0C73-1136-425C-A537-301F8F2E500A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C2B0C73-1136-425C-A537-301F8F2E500A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C2B0C73-1136-425C-A537-301F8F2E500A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
