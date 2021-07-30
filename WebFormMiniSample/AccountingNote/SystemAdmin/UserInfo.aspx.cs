@@ -1,4 +1,5 @@
-﻿using AccountingNote.DBSource;
+﻿using AccountingNote.Auth;
+using AccountingNote.DBSource;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,7 +16,8 @@ namespace AccountingNote.SystemAdmin
         {
             if (!this.IsPostBack)//可能是按鈕跳回本頁，所以要判斷postback
             {
-                if (this.Session["UserLoginInfo"] == null)//如果尚未登入，導至登入頁
+                //如果尚未登入，導至登入頁
+                if (!AuthManager.IsLogined())
                 {
                     Response.Redirect("/Login.aspx");
                     return;
@@ -26,7 +28,7 @@ namespace AccountingNote.SystemAdmin
 
                 if (dr == null) //如果帳號不存在，導至登入頁
                 {
-                    this.Session["UserLoginInfo"] = null;//防止無限迴圈~10:54
+                    //this.Session["UserLoginInfo"] = null;//防止無限迴圈~10:54
                     Response.Redirect("/Login.aspx");
                     return;
                 }
@@ -39,7 +41,9 @@ namespace AccountingNote.SystemAdmin
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Session["UserLoginInfo"] = null; //清除登入資訊，導至登入頁
+            //清除登入資訊，導至登入頁
+            //this.Session["UserLoginInfo"] = null;
+            AuthManager.Logout();
             Response.Redirect("/Login.aspx");
         }
     }

@@ -65,7 +65,7 @@ namespace AccountingNote.DBSource
             list.Add(new SqlParameter("@userID", userID));
             return DBHelper.ReadDataRow(connStr, dbCommand, list);
 
-            try 
+            try
             {
                 return DBHelper.ReadDataRow(connStr, dbCommand, list);
             }
