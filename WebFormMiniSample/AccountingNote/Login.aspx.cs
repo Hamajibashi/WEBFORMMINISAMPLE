@@ -1,4 +1,5 @@
-﻿using AccountingNote.DBSource;
+﻿using AccountingNote.Auth;
+using AccountingNote.DBSource;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,35 +32,42 @@ namespace AccountingNote
             string inp_Account = this.txtAccount.Text;
             string inp_PWD = this.txtPWD.Text;
 
-            //check empty
-            if (string.IsNullOrEmpty(inp_Account) || string.IsNullOrWhiteSpace(inp_PWD)) 
+            string msg;
+            if (!AuthManager.TryLogin(inp_Account, inp_PWD, out msg)) 
             {
-                this.ltltMsg.Text = "Account/PWD is required.";
+                this.ltltMsg.Text = msg;
                 return;
             }
 
-            var dr = UserInfoManager.GetUserInfoByAccount(inp_Account);
+            Response.Redirect("/SystemAdmin/UserInfo.aspx");
 
-            //check null
-            if (dr == null) 
-            {
-                this.ltltMsg.Text = "Accounting doesn't exists";
-                return;
-            }
+            ////check empty
+            //if (string.IsNullOrEmpty(inp_Account) || string.IsNullOrWhiteSpace(inp_PWD)) 
+            //{
+            //    this.ltltMsg.Text = "Account/PWD is required.";
+            //    return;
+            //}
 
-            //check account pwd
-            if (string.Compare(dr["Account"].ToString(), inp_Account, true) == 0 && string.Compare(dr["PWD"].ToString(), inp_PWD, false) == 0) //密碼區分大小寫false
-            {
-                this.Session["UserLoginInfo"] = dr["Account"].ToString();
-                Response.Redirect("/SystemAdmin/UserInfo.aspx");
-            }
-            else 
-            {
-                this.ltltMsg.Text = "Login fail. Please check Account / PWD";
-                return;
-            }
+            //var dr = UserInfoManager.GetUserInfoByAccount(inp_Account);
 
+            ////check null
+            //if (dr == null) 
+            //{
+            //    this.ltltMsg.Text = "Accounting doesn't exists";
+            //    return;
+            //}
 
+            ////check account pwd
+            //if (string.Compare(dr["Account"].ToString(), inp_Account, true) == 0 && string.Compare(dr["PWD"].ToString(), inp_PWD, false) == 0) //密碼區分大小寫false
+            //{
+            //    this.Session["UserLoginInfo"] = dr["Account"].ToString();
+            //    Response.Redirect("/SystemAdmin/UserInfo.aspx");
+            //}
+            //else 
+            //{
+            //    this.ltltMsg.Text = "Login fail. Please check Account / PWD";
+            //    return;
+            //}
         }
     }
 }

@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="AccountingNote.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>流水帳管理系統</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <h1>
+                        <a href="/">
+                            <img src="images/test.png" width="300"/><br />
+                            <asp:Literal ID="ltCaption" runat="server">流水帳管理系統 - 後台</asp:Literal>
+                        </a>
+                    </h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="UserInfo.aspx">使用者資訊</a><br />
+                    <a href="AccountingList.aspx">流水帳管理</a><br />
+                    <a href="UserList.aspx">會員管理</a>
+                </td>
+                <td>
+                    <!--這裡放主要內容-->
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder> 
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h3>頁尾</h3>
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:Button ID="Button1" runat="server" Text="訂閱" OnClick="Button1_Click" /><br />
+                    <asp:Literal ID="ltlMsg" runat="server"></asp:Literal>
+                </td>
+            </tr>
+        </table>
+        <p>我是主版頁面才會有的內容</p>
+    </form>
+</body>
+</html>

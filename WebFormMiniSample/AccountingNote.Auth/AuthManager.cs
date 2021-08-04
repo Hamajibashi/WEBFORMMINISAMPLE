@@ -54,5 +54,38 @@ namespace AccountingNote.Auth
         {
             HttpContext.Current.Session["UserLogInfo"] = null;
         }
+
+        public static bool TryLogin(string account, string pwd, out string errorMsg) 
+        {
+            if (string.IsNullOrEmpty(account) || string.IsNullOrWhiteSpace(pwd))
+            {
+                errorMsg = "Account/PWD is required.";
+                return false;
+            }
+
+            var dr = UserInfoManager.GetUserInfoByAccount(account);
+
+            //check null
+            if (dr == null)
+            {
+                errorMsg = $"Accounting: {account} doesn't exists";
+                return false;
+            }
+
+            //check account pwd
+            if (string.Compare(dr["Account"].ToString(), account, true) == 0 && string.Compare(dr["PWD"].ToString(), pwd, false) == 0) //密碼區分大小寫false
+            {
+                HttpContext.Current.Session["UserLoginInfo"] = dr["Account"].ToString();
+
+                errorMsg = string.Empty;
+                return true;
+            }
+            else
+            {
+                errorMsg = "Login fail. Please check Account / PWD";
+                return false;
+            }
+
+        } 
     }
 }

@@ -7,56 +7,65 @@
 // </自動產生的>
 //------------------------------------------------------------------------------
 
-namespace AccountingNote.SystemAdmin
+namespace WebApplication2
 {
 
 
-    public partial class AccountingList
+    public partial class Default
     {
 
         /// <summary>
-        /// form1 控制項。
+        /// WebUserControl1 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::WebApplication2.WebUserControl1 WebUserControl1;
 
         /// <summary>
-        /// btnCreate 控制項。
+        /// ucCoverImage 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreate;
+        protected global::WebApplication2.WebUserControl2 ucCoverImage;
 
         /// <summary>
-        /// gvAccountingList 控制項。
+        /// WebUserControl2 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvAccountingList;
+        protected global::WebApplication2.WebUserControl1 WebUserControl2;
 
         /// <summary>
-        /// ucPager2 控制項。
+        /// ucCoverImage1 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::AccountingNote.UserControl.ucPager2 ucPager2;
+        protected global::WebApplication2.WebUserControl2 ucCoverImage1;
 
         /// <summary>
-        /// plcNoData 控制項。
+        /// WebUserControl3 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder plcNoData;
+        protected global::WebApplication2.WebUserControl1 WebUserControl3;
+
+        /// <summary>
+        /// ucCoverImage2 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::WebApplication2.WebUserControl2 ucCoverImage2;
     }
 }

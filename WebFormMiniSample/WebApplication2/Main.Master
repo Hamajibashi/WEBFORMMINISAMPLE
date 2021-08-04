@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="WebApplication2.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title><%= this.MyTitle %></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <h1>
+                        <a href="/"><!--回到根目錄-->
+                            <img src="/images/6681438.png" width="150" height="150"/>
+                            <asp:Literal ID="ltlCaption" runat="server">示範系統</asp:Literal>
+                        </a>
+                    </h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="WebForm4.aspx">第一頁</a><br />
+                    <a href="WebForm5.aspx">第二頁</a><br />
+                    <a href="WebForm6.aspx">第三頁</a>
+                </td>
+                <td>
+                    <!--ContentPlaceHolder放主要內容-->
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h3>頁尾</h3>
+                    <asp:TextBox runat="server" ID="txtEmail"></asp:TextBox>
+                    <asp:Button runat="server" ID="Button1" Text="Order" OnClick="Button1_Click" /><br />
+                    <asp:Literal ID="ltlMsg" runat="server"></asp:Literal>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
